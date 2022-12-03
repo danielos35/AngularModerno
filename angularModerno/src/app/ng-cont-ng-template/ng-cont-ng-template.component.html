@@ -1,0 +1,31 @@
+<!-- 
+    
+NG CONTAINER
+-  Es un elemento que puede contener directivas estructurales sin añadir ningun nuevo elemento al DOM
+-->
+
+<ng-container>
+    Esto no crea un nuevo elemento en el DOM
+</ng-container>>
+
+<!-- 
+
+Tambien se puede usar para utilizar dos directivas dentro de un elemento
+
+-->
+
+<div *ngFor="let item of [1,2,3,4]">
+        <ng-container *ngIf="[1].length !== 0 ; else sinoHayBusquedas " >
+        {{item}}
+        </ng-container>
+</div>
+
+<!-- 
+    NG-TEMPLATE 
+
+    Permite mostrar algo en caso de que no se cumpla alguna condición, por ejemplo para usarlo en un buscador
+-->
+
+<ng-template #sinoHayBusquedas>
+    No se encontraron resultado
+</ng-template>

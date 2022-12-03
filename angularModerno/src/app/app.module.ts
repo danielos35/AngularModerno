@@ -7,13 +7,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HostListenerComponent } from './host-listener/host-listener.component';
 import { NgContainerComponent } from './ng-container/ng-container.component';
 import { NgContainerSonComponent } from './ng-container/ng-container-son/ng-container-son.component';
+import { NgContNgTemplateComponent } from './ng-cont-ng-template/ng-cont-ng-template.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HostListenerComponent,
     NgContainerComponent,
-    NgContainerSonComponent
+    NgContainerSonComponent,
+    NgContNgTemplateComponent
   ],
   imports: [
     BrowserModule,
