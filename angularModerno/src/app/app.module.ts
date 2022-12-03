@@ -5,11 +5,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HostListenerComponent } from './host-listener/host-listener.component';
+import { NgContainerComponent } from './ng-container/ng-container.component';
+import { NgContainerSonComponent } from './ng-container/ng-container-son/ng-container-son.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HostListenerComponent
+    HostListenerComponent,
+    NgContainerComponent,
+    NgContainerSonComponent
   ],
   imports: [
     BrowserModule,

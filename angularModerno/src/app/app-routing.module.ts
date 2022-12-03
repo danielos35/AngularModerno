@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { StandAloneCComponent } from './stand-alone-c/stand-alone-c.component';
 import { HostListenerComponent } from './host-listener/host-listener.component';
+import { NgContainerComponent } from './ng-container/ng-container.component';
 
 const routes: Routes = [
   {
@@ -16,6 +17,10 @@ const routes: Routes = [
   {
     path: 'host_listener',
     component: HostListenerComponent,
+  },
+  {
+    path: 'ng_container',
+    component: NgContainerComponent,
   },
 
   // Cargar solo los archivos de ejecución necesarios para el componente

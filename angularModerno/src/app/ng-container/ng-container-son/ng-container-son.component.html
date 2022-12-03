@@ -1,0 +1,12 @@
+<div class="contenedor_hijo">
+
+    <!-- Para recibir información desde el padre usamos el ng content (proyectar info) -->
+    <!-- Para filtar el contenido usamos select y escribimos la etiqueta que queremos recibir -->
+    <ng-content select="[title_etiqueta]"></ng-content>
+
+    <!-- Podemos usar mas de un selector y etiqueta -->
+    <ng-content select="[subtitle_etiqueta]"></ng-content>
+
+    <!-- Si no se tiene selectores toma todo el contenido  -->
+    <!-- <ng-content></ng-content> -->
+</div>
