@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, NgZone } from '@angular/core';
 
 @Component({
   selector: 'app-father',
@@ -8,6 +8,10 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 })
 export class FatherComponent {
   dataFromSon!: string;
+  datosParaHijo!: string;
+
+  constructor(public zone: NgZone) {}
+
   isRender(): boolean {
     console.log('renderizado el padre');
     return true;

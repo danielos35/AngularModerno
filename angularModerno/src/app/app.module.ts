@@ -9,20 +9,17 @@ import { NgContainerComponent } from './ng-container/ng-container.component';
 import { NgContainerSonComponent } from './ng-container/ng-container-son/ng-container-son.component';
 import { NgContNgTemplateComponent } from './ng-cont-ng-template/ng-cont-ng-template.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
     HostListenerComponent,
     NgContainerComponent,
     NgContainerSonComponent,
-    NgContNgTemplateComponent
+    NgContNgTemplateComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

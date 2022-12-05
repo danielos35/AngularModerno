@@ -1,6 +1,2 @@
-<hr>
-<h1>COMPONENTE HIJO</h1>
-<input [(ngModel)]="dataInput" (keypress)="emitDataToFather()">
-<button>Emitir datos al padre</button>
-<p>{{isRender()}}</p>
-<hr>
+<input (keypress)="changeValue($event)">
+<h1>{{variable}}</h1>

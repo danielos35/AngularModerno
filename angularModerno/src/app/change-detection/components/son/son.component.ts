@@ -1,8 +1,10 @@
 import {
   ChangeDetectionStrategy,
+  ChangeDetectorRef,
   Component,
   EventEmitter,
   Input,
+  NgZone,
   Output,
 } from '@angular/core';
 
@@ -11,18 +13,27 @@ import {
   templateUrl: './son.component.html',
   styleUrls: ['./son.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
+
+  /**
+   * Por medio de un Push se van a detectar eventos de usuarios como clic o teclas presionadas y subscripciones
+   * Tambien detecta el @input desde un padre
+   *
+   */
 })
 export class SonComponent {
-  @Input() data!: any;
-  @Output() emitData: EventEmitter<any> = new EventEmitter();
-  dataInput!: string;
+  variable!: any;
+  constructor(private cdr: ChangeDetectorRef) {
+    this.variable = 'Hola mundo';
 
-  isRender(): boolean {
-    console.log('renderizado el hijo');
-    return true;
+    // Con esta funcion desactivamos los cambios
+    this.cdr.detach();
+
+    // Con esta funcion activamos nuevamente los cambios
+    // this.cdr.reattach();
   }
 
-  emitDataToFather(): void {
-    this.emitData.emit(this.dataInput);
+  changeValue(event: any) {
+    this.variable = event.key;
+    this.cdr.detectChanges();
   }
 }

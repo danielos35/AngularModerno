@@ -7,6 +7,8 @@ import { SonComponent } from './components/son/son.component';
 import { GrandFatherComponent } from './components/grand-father/grand-father.component';
 import { HomeComponent } from './home/home.component';
 import { FormsModule } from '@angular/forms';
+import { SonTwoComponent } from './components/son-two/son-two.component';
+import { FatherTwoComponent } from './components/father-two/father-two.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +16,8 @@ import { FormsModule } from '@angular/forms';
     SonComponent,
     GrandFatherComponent,
     HomeComponent,
+    SonTwoComponent,
+    FatherTwoComponent,
   ],
   imports: [CommonModule, FormsModule, ChangeDetectionRoutingModule],
 })

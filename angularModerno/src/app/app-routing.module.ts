@@ -30,6 +30,15 @@ const routes: Routes = [
     component: NgContNgTemplateComponent,
   },
 
+  // Cargar modulo
+  {
+    path: 'change_detection',
+    loadChildren: () =>
+      import('./change-detection/change-detection.module').then(
+        (mod) => mod.ChangeDetectionModule
+      ),
+  },
+
   // Cargar solo los archivos de ejecución necesarios para el componente
   {
     path: 'stand_alone_lazy',
