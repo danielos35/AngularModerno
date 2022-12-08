@@ -80,4 +80,24 @@ export class TeoriaComponent {
      *
      * */
   }
+
+  detencionCambiosManualmente() {
+    /**
+     *
+     * ACTIVAR Y DESACTIVAR LA DETENCIÓN DE CAMBIOS
+     *
+     * - detectetChanges()
+     * --- Activa la detección de cambiospara los componentes hijos
+     *
+     * - aplicationRef.tick()
+     * --- Activa la detención de cambios para toda la aplicación
+     *
+     * - markForCheck()
+     * --- Verificar una vez la aplicación
+     *
+     *
+     *
+     *
+     * */
+  }
 }
