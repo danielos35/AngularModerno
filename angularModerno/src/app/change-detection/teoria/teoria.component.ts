@@ -63,6 +63,7 @@ export class TeoriaComponent {
      * - Estrategia de detencion de cambios que angular utiliza por defecto
      * - Es conocida como verificación sucia (dado que recorre todo el arbol de componentes)
      * - Influye mucho en el performance de aplicativos GRANDES
+     * - Se activa cuando se desencadena cualquier evento
      *
      * ON PUSH
      * - Verifica solo las zonas que le interesa
@@ -73,9 +74,9 @@ export class TeoriaComponent {
      * --- La detención de cambios se activa de manera manual
      * --- Un observable vinculado al template a traves de Async Pipe emite un nuevo valor
      *
-     *
-     *
-     *
+     * -- ¿Cuando NO seactiva esta validacion?
+     * --- Cuando se moodifica un observable
+     * --- SetTimeOut, setInterval
      *
      * */
   }
