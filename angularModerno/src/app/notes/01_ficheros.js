@@ -6,10 +6,13 @@
  * -> package.json configuración scriptes, dependencias, devdepencias
  * -> Angular.json reglas de proyecto, donde se guardará el proyecto al compilar
  *
- * STYLES
+ * STYLES Y SCRIPTS
  *
  * -> configuración de estilos dentro del proyecto
- * -
+ * 
+ * CONFIGURATIONS
+ * 
+ * -> configuración de peso de la aplicación
  *
  *
  *
