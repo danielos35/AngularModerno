@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { SonTwoComponent } from './components/son-two/son-two.component';
 import { FatherTwoComponent } from './components/father-two/father-two.component';
 import { TeoriaComponent } from './teoria/teoria.component';
+import { ChangesComponent } from './components/changes/changes.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { TeoriaComponent } from './teoria/teoria.component';
     SonTwoComponent,
     FatherTwoComponent,
     TeoriaComponent,
+    ChangesComponent,
   ],
   imports: [CommonModule, FormsModule, ChangeDetectionRoutingModule],
 })

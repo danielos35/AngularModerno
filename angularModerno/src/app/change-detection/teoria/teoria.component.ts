@@ -78,6 +78,8 @@ export class TeoriaComponent {
      * --- Cuando se moodifica un observable
      * --- SetTimeOut, setInterval
      *
+     * (VER IMAGEN GHANGE PARA MAYOR CLARIDAD)
+     *
      * */
   }
 
