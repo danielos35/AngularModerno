@@ -10,6 +10,6 @@
  * - @VIEWCHILD
  *
  *
- *
+ * ****VER COMPONENTE DECORADORES PARA UNA EXPLICACIÓN MAS PRECISA************************
  *
  * */

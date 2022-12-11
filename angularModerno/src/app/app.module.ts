@@ -8,6 +8,7 @@ import { HostListenerComponent } from './host-listener/host-listener.component';
 import { NgContainerComponent } from './ng-container/ng-container.component';
 import { NgContainerSonComponent } from './ng-container/ng-container-son/ng-container-son.component';
 import { NgContNgTemplateComponent } from './ng-cont-ng-template/ng-cont-ng-template.component';
+import { DecoradoresComponent } from './decoradores/decoradores.component';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { NgContNgTemplateComponent } from './ng-cont-ng-template/ng-cont-ng-temp
     NgContainerComponent,
     NgContainerSonComponent,
     NgContNgTemplateComponent,
+    DecoradoresComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
   providers: [],

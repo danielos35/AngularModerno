@@ -4,6 +4,7 @@ import { StandAloneCComponent } from './stand-alone-c/stand-alone-c.component';
 import { HostListenerComponent } from './host-listener/host-listener.component';
 import { NgContainerComponent } from './ng-container/ng-container.component';
 import { NgContNgTemplateComponent } from './ng-cont-ng-template/ng-cont-ng-template.component';
+import { DecoradoresComponent } from './decoradores/decoradores.component';
 
 const routes: Routes = [
   {
@@ -28,6 +29,10 @@ const routes: Routes = [
   {
     path: 'container_template',
     component: NgContNgTemplateComponent,
+  },
+  {
+    path: 'decorator',
+    component: DecoradoresComponent,
   },
 
   // Cargar modulo
