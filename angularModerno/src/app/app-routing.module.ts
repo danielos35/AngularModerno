@@ -5,6 +5,7 @@ import { HostListenerComponent } from './host-listener/host-listener.component';
 import { NgContainerComponent } from './ng-container/ng-container.component';
 import { NgContNgTemplateComponent } from './ng-cont-ng-template/ng-cont-ng-template.component';
 import { DecoradoresComponent } from './decoradores/decoradores.component';
+import { PipesComponent } from './pipes/pipes.component';
 
 const routes: Routes = [
   {
@@ -33,6 +34,10 @@ const routes: Routes = [
   {
     path: 'decorator',
     component: DecoradoresComponent,
+  },
+  {
+    path: 'pipes',
+    component: PipesComponent,
   },
 
   // Cargar modulo

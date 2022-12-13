@@ -1,0 +1,12 @@
+
+<input type="text" [(ngModel)]="data">
+
+<h1 *ngFor="let item of (arreglo | custom_pipe:data)">
+    {{item}}
+</h1>
+
+<!-- <h1>{{data | titlecase}}</h1>
+<h1>{{'01/12/12'| date:'sort' | uppercase}}</h1>
+<h1>{{1222 | currency:'EUR'}}</h1>
+<h1>{{1222 | currency:'COL'}}</h1> -->
+

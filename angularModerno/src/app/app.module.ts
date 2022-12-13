@@ -9,7 +9,9 @@ import { NgContainerComponent } from './ng-container/ng-container.component';
 import { NgContainerSonComponent } from './ng-container/ng-container-son/ng-container-son.component';
 import { NgContNgTemplateComponent } from './ng-cont-ng-template/ng-cont-ng-template.component';
 import { DecoradoresComponent } from './decoradores/decoradores.component';
-
+import { PipesComponent } from './pipes/pipes.component';
+import { FormsModule } from '@angular/forms';
+import { CustomPipe } from './pipes/pipes/custom.pipe';
 
 @NgModule({
   declarations: [
@@ -19,8 +21,15 @@ import { DecoradoresComponent } from './decoradores/decoradores.component';
     NgContainerSonComponent,
     NgContNgTemplateComponent,
     DecoradoresComponent,
+    PipesComponent,
+    CustomPipe,
   ],
-  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    FormsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
