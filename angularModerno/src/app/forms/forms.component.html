@@ -1,0 +1,8 @@
+<h1>Formulario template-driven</h1>
+
+<form (ngSubmit)="onSumbit(form_template_drive)" #form_template_drive="ngForm">
+    <input type="text" name="texto" ngModel>
+    <input type="number"  name="numeros" ngModel>
+</form>
+
+<h1>{{form_template_drive.value | json}}</h1>
