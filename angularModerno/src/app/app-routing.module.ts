@@ -7,6 +7,7 @@ import { NgContNgTemplateComponent } from './ng-cont-ng-template/ng-cont-ng-temp
 import { DecoradoresComponent } from './decoradores/decoradores.component';
 import { PipesComponent } from './pipes/pipes.component';
 import { FormsComponent } from './forms/forms.component';
+import { RoutesComponent } from './routes/routes.component';
 
 const routes: Routes = [
   {
@@ -50,6 +51,10 @@ const routes: Routes = [
   {
     path: 'forms',
     component: FormsComponent,
+  },
+  {
+    path: 'routes/:id',
+    component: RoutesComponent,
   },
 
   // Cargar modulo

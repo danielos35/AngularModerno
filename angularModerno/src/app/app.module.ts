@@ -13,6 +13,7 @@ import { PipesComponent } from './pipes/pipes.component';
 import { FormsModule } from '@angular/forms';
 import { CustomPipe } from './pipes/pipes/custom.pipe';
 import { FormsComponent } from './forms/forms.component';
+import { RoutesComponent } from './routes/routes.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { FormsComponent } from './forms/forms.component';
     PipesComponent,
     CustomPipe,
     FormsComponent,
+    RoutesComponent,
   ],
   imports: [
     BrowserModule,
