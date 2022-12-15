@@ -11,6 +11,13 @@ import { FormsComponent } from './forms/forms.component';
 const routes: Routes = [
   {
     path: '',
+    redirectTo: '/stand_alone',
+
+    // Evaluar como debe ser la coincidencia
+    pathMatch: 'full',
+  },
+  {
+    path: '',
     pathMatch: 'full',
     redirectTo: 'stand_alone',
   },
