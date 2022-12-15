@@ -15,4 +15,16 @@ export class FormsComponent {
   onSumbit(form: any) {
     console.log(form);
   }
+
+  /**
+   * FORMULARIOS REACTIVOS
+   *
+   * TYPOS
+   * - FormGroup
+   * - FormControl
+   * - FormArray
+   *
+   *
+   *
+   * */
 }
