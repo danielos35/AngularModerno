@@ -8,6 +8,8 @@ import { DecoradoresComponent } from './decoradores/decoradores.component';
 import { PipesComponent } from './pipes/pipes.component';
 import { FormsComponent } from './forms/forms.component';
 import { RoutesComponent } from './routes/routes.component';
+import { ResolvesComponent } from './resolves/resolves.component';
+import { DataResolverService } from './resolves/resolvers/resolvers.service';
 
 const routes: Routes = [
   {
@@ -48,9 +50,27 @@ const routes: Routes = [
     path: 'pipes',
     component: PipesComponent,
   },
+
+  /*
+  RUTAS HIJAS
+  Para el uso de rutas hijas se debe de usar el router outlet dentro del componente padre
+  */
   {
     path: 'forms',
     component: FormsComponent,
+    children: [
+      {
+        path: 'test',
+        component: PipesComponent,
+      },
+    ],
+  },
+
+  // RESOLVES
+  {
+    path: 'resolves',
+    component: ResolvesComponent,
+    resolve: { departaments: DataResolverService },
   },
   {
     path: 'routes/:id',
