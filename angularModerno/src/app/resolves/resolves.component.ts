@@ -12,6 +12,8 @@ export class ResolvesComponent implements OnInit {
    * MIDDELWARE QUE VALIDA SI LOS DATOS NECESARIOS PARA UNA VISTA YA SE ENCUENTRAN DISPONIBLES
    * - Se dispara antes de las rutas
    * - Si los datos no está disponible esos datos no se empiezan a renderizar
+   *
+   * RESOLVER VS GUARD: https://stackoverflow.com/questions/46838455/trying-to-understand-difference-between-canactivate-and-resolver
    * */
 
   constructor(private readonly route: ActivatedRoute) {}
