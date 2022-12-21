@@ -14,3 +14,11 @@ const routes: Routes = [
   exports: [RouterModule],
 })
 export class LazyLoadingRoutingModule {}
+
+/**
+ * FORROOT
+ * - se utiliza para colocar todas las rutas en el modulo principal, se recomienda tener un solo forRoot en la aplicación 
+ * 
+ * FORCHILD
+ * - Se utiliza para colocar todas las rutas de los modulos, y solo será utilizado cuando angular lo necesite
+ * */ 
