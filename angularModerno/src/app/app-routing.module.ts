@@ -94,6 +94,15 @@ const routes: Routes = [
         (m) => m.StandAloneCComponent
       ),
   },
+
+  // LAZY LOADING
+  {
+    path: 'lazy-loading',
+    loadChildren: () =>
+      import('./lazy-loading/lazy-loading.module').then(
+        (m) => m.LazyLoadingModule
+      ),
+  },
 ];
 
 @NgModule({
