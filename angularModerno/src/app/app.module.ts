@@ -15,6 +15,8 @@ import { CustomPipe } from './pipes/pipes/custom.pipe';
 import { FormsComponent } from './forms/forms.component';
 import { RoutesComponent } from './routes/routes.component';
 import { ResolvesComponent } from './resolves/resolves.component';
+import { HttpComponent } from './http/http.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -29,12 +31,14 @@ import { ResolvesComponent } from './resolves/resolves.component';
     FormsComponent,
     RoutesComponent,
     ResolvesComponent,
+    HttpComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

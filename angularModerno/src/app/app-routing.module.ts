@@ -10,6 +10,7 @@ import { FormsComponent } from './forms/forms.component';
 import { RoutesComponent } from './routes/routes.component';
 import { ResolvesComponent } from './resolves/resolves.component';
 import { DataResolverService } from './resolves/resolvers/resolvers.service';
+import { HttpComponent } from './http/http.component';
 
 const routes: Routes = [
   {
@@ -102,6 +103,10 @@ const routes: Routes = [
       import('./lazy-loading/lazy-loading.module').then(
         (m) => m.LazyLoadingModule
       ),
+  },
+  {
+    path: 'http',
+    component: HttpComponent,
   },
 ];
 
