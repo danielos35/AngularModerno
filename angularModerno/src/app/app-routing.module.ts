@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { StandAloneCComponent } from './stand-alone-c/stand-alone-c.component';
 import { HostListenerComponent } from './host-listener/host-listener.component';
 import { NgContainerComponent } from './ng-container/ng-container.component';
@@ -12,6 +12,9 @@ import { ResolvesComponent } from './resolves/resolves.component';
 import { DataResolverService } from './resolves/resolvers/resolvers.service';
 import { HttpComponent } from './http/http.component';
 
+// PRECARGA DE MODULOS PERSONALIZADA
+import { EstrategiaCargaModulosService } from './servicios/estrategia-carga-modulos.service';
+ 
 const routes: Routes = [
   {
     path: '',
@@ -97,12 +100,14 @@ const routes: Routes = [
   },
 
   // LAZY LOADING
+
   {
     path: 'lazy-loading',
     loadChildren: () =>
       import('./lazy-loading/lazy-loading.module').then(
         (m) => m.LazyLoadingModule
       ),
+    data: { preload: true },
   },
   {
     path: 'http',
@@ -110,8 +115,20 @@ const routes: Routes = [
   },
 ];
 
+/**
+ * CARGAR MODULOS DESDE EL INCIO
+ * Para cargar modulos desde el inicio colocamos la siguiente configuración
+ * - enableTracing: true,
+ * - preloadingStrategy: PreloadAllModules, (Importante exportar)
+ * - Para elegir cuales extrategias de carga de modulos vamos a usar podemos utilizar un servicio
+ * */
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    RouterModule.forRoot(routes, {
+      enableTracing: true,
+      preloadingStrategy: EstrategiaCargaModulosService,
+    }),
+  ],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}
