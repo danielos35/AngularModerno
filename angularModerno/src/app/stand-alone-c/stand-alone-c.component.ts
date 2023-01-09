@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ChildStandAloneComponent } from './child-stand-alone/child-stand-alone.component';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-stand-alone-c',
@@ -18,7 +19,20 @@ import { ChildStandAloneComponent } from './child-stand-alone/child-stand-alone.
   templateUrl: './stand-alone-c.component.html',
   styleUrls: ['./stand-alone-c.component.scss'],
 })
-export class StandAloneCComponent {}
+export class StandAloneCComponent implements OnInit, OnDestroy {
+  title_memory!: string;
+  constructor(private readonly titulo: Title) {}
+
+  ngOnInit(): void {
+    this.title_memory = this.titulo.getTitle();
+    console.log(this.title_memory);
+    this.titulo.setTitle('Stand Alone');
+  }
+
+  ngOnDestroy(): void {
+    this.titulo.setTitle(this.title_memory);
+  }
+}
 
 /*
 Notas:
