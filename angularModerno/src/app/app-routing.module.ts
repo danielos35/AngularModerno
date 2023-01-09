@@ -16,9 +16,16 @@ import { HttpComponent } from './http/http.component';
 import { EstrategiaCargaModulosService } from './servicios/estrategia-carga-modulos.service';
  
 const routes: Routes = [
+  // {
+  //   path: '',
+  //   redirectTo: '/stand_alone',
+
+  //   // Evaluar como debe ser la coincidencia
+  //   pathMatch: 'full',
+  // },
   {
     path: '',
-    redirectTo: '/stand_alone',
+    redirectTo: '/',
 
     // Evaluar como debe ser la coincidencia
     pathMatch: 'full',

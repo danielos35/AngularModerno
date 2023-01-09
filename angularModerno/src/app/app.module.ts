@@ -17,6 +17,7 @@ import { RoutesComponent } from './routes/routes.component';
 import { ResolvesComponent } from './resolves/resolves.component';
 import { HttpComponent } from './http/http.component';
 import { HttpClientModule } from '@angular/common/http';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { HttpClientModule } from '@angular/common/http';
     RoutesComponent,
     ResolvesComponent,
     HttpComponent,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,
