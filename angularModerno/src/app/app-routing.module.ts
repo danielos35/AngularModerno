@@ -105,6 +105,13 @@ const routes: Routes = [
         (m) => m.StandAloneCComponent
       ),
   },
+  {
+    path: 'esperimentos',
+    loadComponent: () =>
+      import('./esperimentos/esperimentos.component').then(
+        (m) => m.EsperimentosComponent
+      ),
+  },
 
   // LAZY LOADING
 

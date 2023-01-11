@@ -1,0 +1,23 @@
+<div class="modal-dialog modal-fullscreen-sm-down modal-xl mt-5" style="display:block ;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">
+          <ng-content select="[titulo]"></ng-content>
+        </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <ng-content select="[body]"></ng-content>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="emitOk.emit()">
+          <ng-content select="[submit]"></ng-content>
+        </button>
+        <button type="button" class="btn btn-primary"  (click)="emitCancel.emit()" >
+          <ng-content select="[cancel]"></ng-content>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

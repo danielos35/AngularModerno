@@ -1,0 +1,6 @@
+<app-modal *ngIf="closeModal" (emitOk)="abrirModal()" (emitCancel)="cerrarModal()">
+    <h5 titulo>Hola Mundo</h5>
+    <p body>Modal body text goes here.</p>
+    <span submit>Enviar</span>
+    <span cancel>Cancelar</span>
+</app-modal>

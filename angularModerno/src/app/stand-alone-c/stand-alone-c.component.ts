@@ -22,6 +22,7 @@ import { Title } from '@angular/platform-browser';
 export class StandAloneCComponent implements OnInit, OnDestroy {
   title_memory!: string;
   constructor(private readonly titulo: Title) {}
+  favIcon: HTMLLinkElement | null = document.querySelector('#favIcon') || null;
 
   ngOnInit(): void {
     this.title_memory = this.titulo.getTitle();
@@ -29,8 +30,20 @@ export class StandAloneCComponent implements OnInit, OnDestroy {
     this.titulo.setTitle('Stand Alone');
   }
 
+  flag = true;
+  interval: any = setInterval(() => {
+    this.flag = !this.flag;
+    if (!this.flag) this.favIcon!.href = `assets/icon_1.png`;
+    if (this.flag) this.favIcon!.href = `assets/icon_2.png`;
+  }, 1000);
+
+  changeFavicon() {
+    this.titulo.setTitle('+1 Mensaje nuevo');
+  }
+
   ngOnDestroy(): void {
     this.titulo.setTitle(this.title_memory);
+    clearInterval(this.interval);
   }
 }
 
