@@ -112,6 +112,11 @@ const routes: Routes = [
         (m) => m.EsperimentosComponent
       ),
   },
+  {
+    path: 'heroes',
+    loadChildren: () =>
+      import('./heroes/heroes.module').then((m) => m.HeroesModule),
+  },
 
   // LAZY LOADING
 

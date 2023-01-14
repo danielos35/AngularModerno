@@ -11,27 +11,29 @@
         <div class="navbar-nav">
 
             <a
-                class="nav-a active"
+                class="nav-link"
                 routerLink="marvel"
+                routerLinkActive="['active']"
             >
                 Marvel
             </a>
 
             <a
-                class="nav-a active"
+                class="nav-link"
                 routerLink="dc"
+                routerLinkActive="['active']"
             >
                 DC
             </a>
             <a
-                class="nav-a active"
+                class="nav-link"
                 routerLink=""
+                routerLinkActive="['active']"
             >
                 Search
             </a>
             <a
-                class="nav-a active"
-                to="/hero"
+                class="nav-link"
             >
                 Hero
             </a>
@@ -43,18 +45,12 @@
             <span class="nav-item nav-a text-primary mr-5">
                 Test
             </span>
-
             <button
-                class="nav-item nav-a btn"
+                class="nav-item nav-link btn"
+                (click)="onLogOut()"
             >
                 Logout
-            </button>
-            <a
-                class="nav-a active"
-                to="/login"
-            >
-                Logout
-            </a> 
+            </button> 
         </ul>
     </div>
 </nav>
