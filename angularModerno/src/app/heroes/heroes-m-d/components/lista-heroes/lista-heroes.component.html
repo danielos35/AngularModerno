@@ -1,6 +1,6 @@
 
-<ul>
-    <li *ngFor="let heroe of dataHero">
-        {{heroe.superhero}}
-    </li>
-</ul>
+<div class="row rows-cols-1 row-cols-md-3 g-3">
+    <div *ngFor="let heroe of dataHero">
+        <app-hero-card [heroe]="heroe"></app-hero-card>
+    </div>
+</div >
