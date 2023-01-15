@@ -10,6 +10,5 @@ export class MarvelComponent implements OnInit {
   dataHeroes: Array<any> = [];
   ngOnInit() {
     this.dataHeroes = getHeroeByPublisher('Marvel Comics');
-    console.log(this.dataHeroes);
   }
 }

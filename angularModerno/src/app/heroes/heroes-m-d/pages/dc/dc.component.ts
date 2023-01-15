@@ -10,6 +10,5 @@ export class DcComponent {
   dataHeroes: Array<any> = [];
   ngOnInit() {
     this.dataHeroes = getHeroeByPublisher('DC Comics');
-    console.log(this.dataHeroes);
   }
 }

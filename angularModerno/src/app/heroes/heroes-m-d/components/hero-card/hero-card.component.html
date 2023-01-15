@@ -10,7 +10,8 @@
                 <div class="card-body">
                     <h5 class="card-title">{{ heroe.superhero || ''}}</h5>
                     <p class="card-text">{{ heroe.alter_ego || '' }}</p>
-                    <p class="card-text">{{ heroe.characters || '' }}</p>
+                    <p *ngIf="heroe.characters !== heroe.alter_ego">{{heroe.characters}}</p>
+                    <a [routerLink]="['/heroes/heores_intranet/main/heroe', heroe.id]" > Mas info..</a>
                 </div>
             </div>
 
