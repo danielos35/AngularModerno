@@ -1,0 +1,50 @@
+.contenedor {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    width: 100%;
+    height: 80vh;
+    background: red;
+}
+
+.navbar-custom {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    width: 100%;
+    height: 20vh;
+}
+
+.cuerpo-custom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+
+    width: 100%;
+    height: 80vh;
+}
+
+.columna-uno {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+
+    width: 20%;
+    height: 100%;
+    background: pink;
+}
+
+.columna-dos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 80%;
+    height: 100%;
+    background: purple;
+}

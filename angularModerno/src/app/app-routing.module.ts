@@ -96,6 +96,11 @@ const routes: Routes = [
         (mod) => mod.ChangeDetectionModule
       ),
   },
+  {
+    path: 'guards',
+    loadChildren: () =>
+      import('./guards/guards.module').then((mod) => mod.GuardsModule),
+  },
 
   // Cargar solo los archivos de ejecución necesarios para el componente
   {
