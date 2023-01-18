@@ -7,6 +7,7 @@ import { LoginComponent } from './login/login.component';
 import { SearchComponent } from './search/search.component';
 import { NavbarComponent } from './ui/navbar/navbar.component';
 import { UserCardComponent } from './components/user-card/user-card.component';
+import { CanActivateGuardian } from './canActivate/canActivate.guard';
 
 @NgModule({
   declarations: [
@@ -17,5 +18,8 @@ import { UserCardComponent } from './components/user-card/user-card.component';
     UserCardComponent,
   ],
   imports: [CommonModule, GuardsRoutingModule],
+
+  // LOS GUARDS SE DEBEN DE USAR SIEMPRE COMO PROVIDERS EN ANGULAR
+  providers: [CanActivateGuardian]
 })
 export class GuardsModule {}

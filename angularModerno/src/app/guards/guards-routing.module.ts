@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CanActivateGuardian } from './canActivate/canActivate.guard';
 import { UserCardComponent } from './components/user-card/user-card.component';
 import { IndexGuardComponent } from './index-guard/index-guard.component';
 import { LoginComponent } from './login/login.component';
@@ -23,6 +24,7 @@ const routes: Routes = [
       {
         path: 'login',
         component: LoginComponent,
+        canActivate:[CanActivateGuardian]
       },
     ],
   },
