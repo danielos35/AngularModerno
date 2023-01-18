@@ -1,17 +1,11 @@
 <div class="contenedor">
     <div class="cuerpo-custom">
         <div class="columna-uno">
-            <button class="btn btn-primary" routerLink="uno">
-                Page one
-            </button>
-
-            <button class="btn btn-primary" routerLink="dos">
-                Page one
-            </button>
-            
-            <button class="btn btn-primary" routerLink="tres">
-                Page one
-            </button>
+            <ng-container *ngFor="let element of data">
+                <button class="btn btn-primary" [routerLink]="['user', element.autenticate]" [queryParams]="{name:element.name}">
+                    {{element.name}}
+                </button>
+            </ng-container>
         </div>
         <div class="columna-dos">
             <router-outlet></router-outlet>
