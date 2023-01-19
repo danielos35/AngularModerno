@@ -20,6 +20,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NavbarComponent } from './navbar/navbar.component';
 import { CommonModule } from '@angular/common';
 import { HeroesModule } from './heroes/heroes.module';
+import { AuthComponent } from './auth/auth/auth.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { HeroesModule } from './heroes/heroes.module';
     ResolvesComponent,
     HttpComponent,
     NavbarComponent,
+    AuthComponent,
   ],
   imports: [
     CommonModule,
@@ -44,6 +46,7 @@ import { HeroesModule } from './heroes/heroes.module';
     BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

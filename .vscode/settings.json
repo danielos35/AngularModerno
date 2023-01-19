@@ -1,0 +1,26 @@
+{
+    "workbench.colorTheme": "Monokai Pro",
+    "git.autofetch": true,
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[css]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "git.confirmSync": false,
+    "editor.rulers": [
+        100
+    ],
+    "eslint.codeActionsOnSave.rules": null,
+    "npm.keybindingsChangedWarningShown": true,
+    "azure.resourceFilter": [
+        "920040b3-c220-48a2-a73f-1177fa2c098e/ae0ab10c-5d23-481e-ad26-62efac19a2ea"
+    ],
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "html.format.contentUnformatted": ""
+}

@@ -14,6 +14,7 @@ import { HttpComponent } from './http/http.component';
 
 // PRECARGA DE MODULOS PERSONALIZADA
 import { EstrategiaCargaModulosService } from './servicios/estrategia-carga-modulos.service';
+import { AuthComponent } from './auth/auth/auth.component';
  
 const routes: Routes = [
   // {
@@ -34,6 +35,10 @@ const routes: Routes = [
     path: '',
     pathMatch: 'full',
     redirectTo: 'stand_alone',
+  },
+  {
+    path: 'auth',
+    component: AuthComponent,
   },
   {
     path: 'stand_alone',
@@ -100,6 +105,11 @@ const routes: Routes = [
     path: 'guards',
     loadChildren: () =>
       import('./guards/guards.module').then((mod) => mod.GuardsModule),
+  },
+  {
+    path: 'peticiones',
+    loadChildren: () =>
+      import('./http/http.module').then((mod) => mod.HttpModule ),
   },
 
   // Cargar solo los archivos de ejecución necesarios para el componente
