@@ -1,14 +1,18 @@
 import { Injectable } from "@angular/core";
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { catchError, of, throwError, Subject, tap } from 'rxjs';
+import { catchError, of, throwError, Subject, tap, BehaviorSubject } from 'rxjs';
 import { User } from "./user.model";
+import { Router } from '@angular/router';
 @Injectable({providedIn:'root'})
 export class AuthService {
 
-    user = new Subject<User>();
+    user = new Subject<User | null>();
+    
+    // El behavior Subjecto nos permite acceder al ultimo valor emitido a pesar de haberse subscripto despues de esta emisión 
+    token = new BehaviorSubject<User | null>(null);
 
     // MANEJANDO LOS ERRORES DIRECTAMENTE EN EL SERVICIO
-    constructor(private http:HttpClient){}
+    constructor(private http:HttpClient, private readonly router:Router){}
     key:string = 'AIzaSyCYX3e8xHsK477d4k3c-CaJp0G0qA1iXtU';
 
     signup(email:string, password:string, returnSecureToken:boolean){
@@ -35,6 +39,11 @@ export class AuthService {
                 console.log('HOLAAA', data);
             })
         )
+    }
+
+    logOut(){
+        this.user.next(null);
+        this.router.navigate(['/auth'])
     }
 
     private manejoDeErrores(errores:HttpErrorResponse){
