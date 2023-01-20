@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { catchError, of, throwError, Subject } from 'rxjs';
+import { catchError, of, throwError, Subject, tap } from 'rxjs';
 import { User } from "./user.model";
 @Injectable({providedIn:'root'})
 export class AuthService {
@@ -15,7 +15,12 @@ export class AuthService {
         return this.http.post(`https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${this.key}`,{
             email, password,returnSecureToken
         }).pipe(
-            catchError( this.manejoDeErrores )
+            catchError( this.manejoDeErrores ), 
+            tap( (res:any)=> {
+                const data  = this.handleAuthentication(res);
+                this.user.next(data);
+                console.log('HOLAAA', data);
+            })
         )
     }
 
@@ -23,11 +28,21 @@ export class AuthService {
         return this.http.post(`https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${this.key}`,{
             email, password,returnSecureToken
         }).pipe(
-            catchError( this.manejoDeErrores )
+            catchError( this.manejoDeErrores ), 
+            tap( (res:any)=> {
+                const data  = this.handleAuthentication(res);
+                this.user.next(data);
+                console.log('HOLAAA', data);
+            })
         )
     }
 
-    manejoDeErrores(errores:HttpErrorResponse){
+    private manejoDeErrores(errores:HttpErrorResponse){
         return of('Error');
+    }
+
+    private handleAuthentication(dataUser:any){
+        const expirationDate = new Date( new Date().getTime() + dataUser.expiresIn * 1000);
+        return new User(dataUser.email, dataUser.localId, dataUser.idToken, expirationDate) || '';
     }
 }

@@ -8,16 +8,16 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
-          <li class="nav-item">
+          <li *ngIf="isLogin"lass="nav-item">
             <a class="nav-link" routerLink="/stand_alone" routerLinkActive="active">Stand Alone</a>
           </li>
-          <li class="nav-item">
+          <li *ngIf="isLogin"lass="nav-item">
             <a class="nav-link" routerLink="/pipes" routerLinkActive="['active']">Pipes</a>
           </li>
-          <li class="nav-item">
+          <li *ngIf="isLogin"lass="nav-item">
             <a class="nav-link" routerLink="/forms" routerLinkActive="active">Forms</a>
           </li>
-          <li class="nav-item">
+          <li *ngIf="isLogin"lass="nav-item">
             <a class="nav-link" routerLink="/guards" routerLinkActive="active">Guards</a>
           </li>
           <li class="nav-item">
