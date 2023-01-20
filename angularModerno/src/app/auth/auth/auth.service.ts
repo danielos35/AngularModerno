@@ -1,8 +1,11 @@
 import { Injectable } from "@angular/core";
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { catchError, of, throwError } from 'rxjs';
+import { catchError, of, throwError, Subject } from 'rxjs';
+import { User } from "./user.model";
 @Injectable({providedIn:'root'})
 export class AuthService {
+
+    user = new Subject<User>();
 
     // MANEJANDO LOS ERRORES DIRECTAMENTE EN EL SERVICIO
     constructor(private http:HttpClient){}
