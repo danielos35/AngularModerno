@@ -15,6 +15,13 @@ export class AuthService {
     constructor(private http:HttpClient, private readonly router:Router){}
     key:string = 'AIzaSyCYX3e8xHsK477d4k3c-CaJp0G0qA1iXtU';
 
+
+    autoLogin(){
+        const userData = localStorage.getItem('userData');
+        if(!userData)return
+        
+    }
+
     signup(email:string, password:string, returnSecureToken:boolean){
         return this.http.post(`https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${this.key}`,{
             email, password,returnSecureToken
@@ -23,7 +30,6 @@ export class AuthService {
             tap( (res:any)=> {
                 const data  = this.handleAuthentication(res);
                 this.user.next(data);
-                console.log('HOLAAA', data);
             })
         )
     }
@@ -36,7 +42,8 @@ export class AuthService {
             tap( (res:any)=> {
                 const data  = this.handleAuthentication(res);
                 this.user.next(data);
-                console.log('HOLAAA', data);
+                // Guardar en el local storage
+                localStorage.setItem('userData',JSON.stringify(data));
             })
         )
     }

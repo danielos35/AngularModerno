@@ -19,7 +19,7 @@ export class AuthComponent implements OnInit{
   }
 
   initSession(){
-    this.auth.signup(this.mail, this.password, true).subscribe(
+    this.auth.login(this.mail, this.password, true).subscribe(
       (res:any)=>{
         if(res.registered) this.isLogin = true;
         this.router.navigate(['/forms'])
