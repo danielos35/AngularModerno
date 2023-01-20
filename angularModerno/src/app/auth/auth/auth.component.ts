@@ -1,19 +1,33 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { AuthService } from './auth.service';
 
 @Component({
   selector: 'app-auth',
   templateUrl: './auth.component.html',
   styleUrls: ['./auth.component.scss']
 })
-export class AuthComponent {
+export class AuthComponent implements OnInit{
+  constructor(private readonly auth:AuthService){}
+
   mail:string = '';
   password!:string;
   isLogin!:boolean;
 
-  dataUser:any;
+  ngOnInit(): void {
+ 
+  }
+
   initSession(){
-    this.isLogin = !this.isLogin;
-    this.dataUser = {email:this.mail, password:this.password}
+    this.auth.signup(this.mail, this.password, true).subscribe(
+      (res:any)=>{
+        if(res.registered) this.isLogin = true;
+        console.log(res);
+      },
+      (err)=>{
+        console.log('Este es el error', err);
+        this.isLogin = false;
+      }
+    );
   }
 
 }

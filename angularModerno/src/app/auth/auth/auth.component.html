@@ -10,13 +10,12 @@
                     <label for="password">password</label>
                     <input type="password" id="email" class="form-control" [(ngModel)]="password">
                 </div>
-                datqa<p>{{mail}}</p>
                     <button class="btn btn-primary m-5" (click)="initSession()">
-                        {{ isLogin? 'Salir' : 'Iniciar sesión'}}
+                        login
                     </button>
 
-                    <button class="btn btn-primary m-5">
-                        Switch to login
+                    <button *ngIf="isLogin" class="btn btn-primary m-5">
+                        salir
                     </button>
         </div>
     </div>
