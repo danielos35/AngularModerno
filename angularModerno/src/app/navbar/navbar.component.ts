@@ -14,12 +14,17 @@ export class NavbarComponent implements OnInit, OnDestroy{
   constructor( private readonly auth:AuthService){}
 
   ngOnInit(): void {
+
+    console.log('ESTA ES OTRA AUTENTIFICACION');
+    
     this.autenticate = this.auth.user.subscribe(
       (res:any)=>{
+        console.log('SE RESIVIÓ', this.isLogin, res);
         this.isLogin = !!res;
-        console.log('LOGIN', this.isLogin);
       }
     );
+    
+    this.auth.autoLogin();
 
     // Taken nos permite obtener solamente el utimo valor y despues desuscribirnos de manera inmediata
     this.auth.token.pipe(take(1)).subscribe( (res) =>{

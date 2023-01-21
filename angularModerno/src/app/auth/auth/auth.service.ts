@@ -10,6 +10,7 @@ export class AuthService {
     
     // El behavior Subjecto nos permite acceder al ultimo valor emitido a pesar de haberse subscripto despues de esta emisión 
     token = new BehaviorSubject<User | null>(null);
+    private tokenExpirationTimer: any;
 
     // MANEJANDO LOS ERRORES DIRECTAMENTE EN EL SERVICIO
     constructor(private http:HttpClient, private readonly router:Router){}
@@ -17,9 +18,25 @@ export class AuthService {
 
 
     autoLogin(){
-        const userData = localStorage.getItem('userData');
-        if(!userData)return
         
+        const userData: {
+            email:string;
+            id:string;
+            _token:string;
+            _tokenExpirationDate:Date;
+        } = JSON.parse(localStorage.getItem('userData') || '') || null;
+        console.log("USER DATA", userData);
+        
+        if(!userData){
+            return
+        }
+        
+        const loadUser = new User(userData.email, userData.id, userData._token, new Date(userData._tokenExpirationDate));
+        this.user.next(loadUser);    
+        console.log("SE EJECUTO EL OBSERVABLE");
+        if(loadUser.token){
+        }
+             
     }
 
     signup(email:string, password:string, returnSecureToken:boolean){
@@ -50,7 +67,18 @@ export class AuthService {
 
     logOut(){
         this.user.next(null);
-        this.router.navigate(['/auth'])
+        this.router.navigate(['/auth']);
+        localStorage.removeItem('userData');
+        if(this.tokenExpirationTimer){
+            clearTimeout(this.tokenExpirationTimer);
+        }
+        this.tokenExpirationTimer = null;
+    }
+
+    autoLogout(ExpirationDuration:number){
+        this.tokenExpirationTimer = setTimeout(() => {
+            this.logOut();
+        }, ExpirationDuration);
     }
 
     private manejoDeErrores(errores:HttpErrorResponse){
@@ -59,6 +87,7 @@ export class AuthService {
 
     private handleAuthentication(dataUser:any){
         const expirationDate = new Date( new Date().getTime() + dataUser.expiresIn * 1000);
+        this.autoLogout(2000);
         return new User(dataUser.email, dataUser.localId, dataUser.idToken, expirationDate) || '';
     }
 }
