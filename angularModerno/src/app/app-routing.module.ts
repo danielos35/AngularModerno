@@ -15,6 +15,7 @@ import { HttpComponent } from './http/http.component';
 // PRECARGA DE MODULOS PERSONALIZADA
 import { EstrategiaCargaModulosService } from './servicios/estrategia-carga-modulos.service';
 import { AuthComponent } from './auth/auth/auth.component';
+import { AuthGuard } from './auth/auth/auth.guard';
  
 const routes: Routes = [
   // {
@@ -43,6 +44,7 @@ const routes: Routes = [
   {
     path: 'stand_alone',
     component: StandAloneCComponent,
+    canActivate: [AuthGuard],
   },
   {
     path: 'host_listener',
@@ -74,6 +76,7 @@ const routes: Routes = [
   {
     path: 'forms',
     component: FormsComponent,
+    canActivate: [AuthGuard],
     children: [
       {
         path: 'test',

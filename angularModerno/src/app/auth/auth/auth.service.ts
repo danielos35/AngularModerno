@@ -87,7 +87,7 @@ export class AuthService {
 
     private handleAuthentication(dataUser:any){
         const expirationDate = new Date( new Date().getTime() + dataUser.expiresIn * 1000);
-        this.autoLogout(2000);
+        this.autoLogout(10000000);
         return new User(dataUser.email, dataUser.localId, dataUser.idToken, expirationDate) || '';
     }
 }
