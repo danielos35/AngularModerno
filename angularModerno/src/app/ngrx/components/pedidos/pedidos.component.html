@@ -1,0 +1,5 @@
+<input type="text" placeholder="pedido" [formControl]="pedido">
+<button (click)="addPedido()">Agregar</button>
+<ul *ngFor="let itemPedido of pedidos">
+  <li>{{itemPedido}}</li>
+</ul>

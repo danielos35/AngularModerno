@@ -16,7 +16,7 @@ import { HttpComponent } from './http/http.component';
 import { EstrategiaCargaModulosService } from './servicios/estrategia-carga-modulos.service';
 import { AuthComponent } from './auth/auth/auth.component';
 import { AuthGuard } from './auth/auth/auth.guard';
- 
+
 const routes: Routes = [
   // {
   //   path: '',
@@ -113,6 +113,11 @@ const routes: Routes = [
     path: 'peticiones',
     loadChildren: () =>
       import('./http/http.module').then((mod) => mod.HttpModule ),
+  },
+  {
+    path: 'ngrx',
+    loadChildren: () =>
+      import('./ngrx/ngrx.module').then((mod) => mod.NgrxModule),
   },
 
   // Cargar solo los archivos de ejecución necesarios para el componente
