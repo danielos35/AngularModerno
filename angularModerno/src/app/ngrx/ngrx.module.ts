@@ -4,6 +4,8 @@ import { CommonModule } from '@angular/common';
 import { NgrxRoutingModule } from './ngrx-routing.module';
 import { PedidosComponent } from './components/pedidos/pedidos.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { StoreModule } from '@ngrx/store';
+import { reducers_index } from './index.reduce';
 
 
 @NgModule({
@@ -12,6 +14,7 @@ import { ReactiveFormsModule } from '@angular/forms';
   ],
   imports: [
     CommonModule,
+    StoreModule.forRoot(reducers_index),
     NgrxRoutingModule,
     ReactiveFormsModule
   ]

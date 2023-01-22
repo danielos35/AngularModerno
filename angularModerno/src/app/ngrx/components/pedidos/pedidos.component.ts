@@ -1,19 +1,35 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import * as PedidosActios from './store/pedidos.actions'
 
 @Component({
   selector: 'app-pedidos',
   templateUrl: './pedidos.component.html',
   styleUrls: ['./pedidos.component.scss']
 })
-export class PedidosComponent {
+export class PedidosComponent implements OnInit {
 
   pedido:FormControl = new FormControl();
-  pedidos:Array<string> = [];
+  pedidos!:Observable<{ pedidos:Array<any> }>;
+
+  constructor( private store:Store<{ pedidos_store:{ pedidos:Array<any> }}> ){}
+
+  ngOnInit(): void {
+    this.pedidos = this.store.select('pedidos_store')
+  }
 
   addPedido(){
-    this.pedidos.push(this.pedido.value);
-    this.pedido.setValue(null);
+    const pedido = new PedidosActios.AddPedidosClass(this.pedido.value);
+    this.store.dispatch(pedido);
   }
+
+  removePedido(){
+    const pedido = new PedidosActios.RemovePedidosClass(this.pedido.value);
+    this.store.dispatch(pedido);
+  }
+
+
 
 }
