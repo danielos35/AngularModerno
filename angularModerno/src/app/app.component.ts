@@ -10,15 +10,19 @@ export class AppComponent implements OnInit{
   constructor(private readonly auth:AuthService){
   }
   title = 'angularModerno';
-  
-  
+
+
   ngOnInit(): void {
     this.auth.autoLogin();
   }
-  
+
   isRender(): boolean {
     console.log('renderizado el app component');
     return true;
+  }
+
+  seDibujo(){
+    console.log('SE DIBUJÓ NUEVAMENTE');
   }
 
 }

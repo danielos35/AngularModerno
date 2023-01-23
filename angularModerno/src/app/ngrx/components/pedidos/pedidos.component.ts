@@ -30,6 +30,11 @@ export class PedidosComponent implements OnInit {
     this.store.dispatch(pedido);
   }
 
+  removeAll(){
+    const pedido = new PedidosActios.RemoveAll();
+    this.store.dispatch(pedido);
+  }
+
 
 
 }
