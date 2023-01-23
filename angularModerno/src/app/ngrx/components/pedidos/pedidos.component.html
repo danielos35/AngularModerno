@@ -1,6 +1,6 @@
 <input type="text" placeholder="pedido" [formControl]="pedido">
 <button (click)="addPedido()">Agregar</button>
-<button (click)="removePedido()">Remover</button>
-<ul *ngFor="let itemPedido of ( pedidos | async )?.pedidos">
-  <li>{{itemPedido}}</li>
+
+<ul *ngFor="let itemPedido of ( pedidos | async )?.pedidos; let i = index">
+  <li>{{itemPedido}}</li><button (click)="removePedido(i)">Remover</button>
 </ul>

@@ -25,8 +25,8 @@ export class PedidosComponent implements OnInit {
     this.store.dispatch(pedido);
   }
 
-  removePedido(){
-    const pedido = new PedidosActios.RemovePedidosClass(this.pedido.value);
+  removePedido(index:number){
+    const pedido = new PedidosActios.RemovePedidosClass(this.pedido.value, index);
     this.store.dispatch(pedido);
   }
 
