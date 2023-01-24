@@ -13,6 +13,8 @@ export
     ):any | Action
     {
 
+    console.log('PEDIDO', action);
+
     switch(action.type){
 
       case PedidosActions.ADD_PEDIDOS:
@@ -24,7 +26,7 @@ export
       case PedidosActions.REMOVE_PEDIDO:
         return {
           ...structuredClone(state),
-          pedidos: state.pedidos.filter( (_:any, i:number) => (i !==  action?.index ))
+          pedidos: state.pedidos.filter( (_:any, i:number) => (i !==  action.pedido.index ))
         }
 
       case PedidosActions.REMOVE_ALL:
