@@ -9,11 +9,11 @@ export
   function pedidosReducer
     (
       state:any = initalState ,
-      action: PedidosActions.RemovePedidosClass | PedidosActions.AddPedidosClass
-    ):any | Action
+      action: PedidosActions.RemovePedidosClass | PedidosActions.AddPedidosClass | PedidosActions.UpdatePedido
+    ): any | Action
     {
 
-    console.log('PEDIDO', action);
+    console.log('PEDIDO', action, state);
 
     switch(action.type){
 
@@ -33,6 +33,26 @@ export
         return {
           ...structuredClone(state),
           pedidos: []
+        }
+
+      case PedidosActions.UPDATE_PEDIDO:
+        const pedido = state.pedidos[action.pedido.index];
+        console.log('INDEX #1', pedido);
+        console.log('INDEX #2', action.pedido.pedido);
+
+        const updatePedido = {
+          pedido,
+          data:action.pedido.pedido
+        }
+        console.log('UPDATE:::',updatePedido);
+
+        const updatePedidos = [...state.pedidos];
+        updatePedidos[action.pedido.index] = updatePedido.data;
+        console.log(updatePedidos);
+
+        return {
+          ...structuredClone(state),
+          pedidos: updatePedidos
         }
 
       default:

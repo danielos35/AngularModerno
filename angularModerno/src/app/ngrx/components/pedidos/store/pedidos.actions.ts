@@ -22,5 +22,5 @@ export class RemoveAll implements Action {
 
 export class UpdatePedido implements Action {
   readonly type = UPDATE_PEDIDO;
-  constructor(public pedido:{index:number, pedido:any}){}
+  constructor(public pedido:any){}
 }

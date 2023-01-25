@@ -13,6 +13,7 @@ export class PedidosComponent implements OnInit {
 
   pedido:FormControl = new FormControl();
   pedidos!:Observable<{ pedidos:Array<any> }>;
+  update:FormControl = new FormControl();
 
   constructor( private store:Store<{ pedidos_store:{ pedidos:Array<any> }}> ){}
 
@@ -32,6 +33,11 @@ export class PedidosComponent implements OnInit {
 
   removeAll(){
     const pedido = new PedidosActios.RemoveAll();
+    this.store.dispatch(pedido);
+  }
+
+  updatePedido(index:number){
+    const pedido = new PedidosActios.UpdatePedido({index: index, pedido: this.update.value});
     this.store.dispatch(pedido);
   }
 
