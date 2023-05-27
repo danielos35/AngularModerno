@@ -16,6 +16,7 @@ import { HttpComponent } from './http/http.component';
 import { EstrategiaCargaModulosService } from './servicios/estrategia-carga-modulos.service';
 import { AuthComponent } from './auth/auth/auth.component';
 import { AuthGuard } from './auth/auth/auth.guard';
+import { TestingModule } from './testing/testing.module';
 
 const routes: Routes = [
   // {
@@ -155,6 +156,14 @@ const routes: Routes = [
     path: 'http',
     component: HttpComponent,
   },
+
+  //TESTING
+
+  {
+    path:'test',
+    loadChildren: () =>
+      import('./testing/testing.module').then((m) => m.TestingModule),
+  }
 ];
 
 /**
