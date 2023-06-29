@@ -163,7 +163,12 @@ const routes: Routes = [
     path:'test',
     loadChildren: () =>
       import('./testing/testing.module').then((m) => m.TestingModule),
-  }
+  },
+  {
+    path:'two-way',
+    loadChildren: () =>
+      import('./two-way-binding/two-way-binding.module').then((m) => m.TwoWayBindingModule),
+  },
 ];
 
 /**
